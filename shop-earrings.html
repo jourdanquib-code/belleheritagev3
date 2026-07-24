@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jewelry — Belle Heritage Boutique | Handcrafted Louisiana Pendants & Earrings</title>
+<meta name="description" content="Shop handcrafted Belle Heritage jewelry — fleur-de-lis pendants, Creole-inspired earrings, and custom pieces rooted in French Louisiana heritage.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="eyebrow">Boutique</div>
+    <h1>Earrings</h1>
+    <p>Light, everyday-elegant drops inspired by Louisiana design motifs.</p>
+  </div>
+</section>
+
+<section class="shop-layout">
+  <div class="shop-container">
+
+    <aside class="shop-filters">
+      <h3>Filters</h3>
+      <span class="filters-sub">Refine your browse</span>
+
+      <div class="filter-group">
+        <h4>Type</h4>
+        <label class="filter-option"><input type="checkbox" class="collection-filter" value="Pendants"> Pendants <span class="count">4</span></label>
+        <label class="filter-option"><input type="checkbox" class="collection-filter" value="Earrings"> Earrings <span class="count">3</span></label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price</h4>
+        <div class="price-range-display" id="priceDisplay">Up to $50</div>
+        <input type="range" class="price-slider" id="priceSlider" min="5" max="50" value="50" step="1">
+      </div>
+
+      <button class="clear-filters" id="clearFilters">Clear All Filters</button>
+
+      <div class="filter-commission">
+        <p>Looking for something one-of-a-kind?</p>
+        <a href="design-your-own.html" class="btn btn-primary" style="width:100%;">Design Your Own</a>
+      </div>
+    </aside>
+
+    <div class="shop-main">
+      <div class="shop-main-header">
+        <span class="shop-result-count" id="resultCount">7 items</span>
+        <select class="shop-sort">
+          <option>Sort: Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+
+  </div>
+</section>
+
+<a href="checkout.html" class="shop-cart-indicator">Cart <span class="cart-count">0</span></a>
+
+<div id="site-footer"></div>
+
+<script src="shared.js"></script>
+<script src="shop-jewelry.js"></script>
+<script>initShop("Earrings");</script>
+</body>
+</html>

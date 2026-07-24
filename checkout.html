@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Checkout — Belle Heritage Boutique</title>
+<meta name="description" content="Belle Heritage Boutique checkout with domestic and international shipping options.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="eyebrow">Boutique</div>
+    <h1>Checkout</h1>
+    <p>Shipping calculated by destination — domestic and international.</p>
+  </div>
+</section>
+
+<section class="checkout-layout">
+  <div class="checkout-grid">
+
+    <!-- Left: details -->
+    <div class="checkout-form">
+      <h2 class="checkout-h2">Shipping Details</h2>
+
+      <div class="consult-inquiry-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Jane">
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Doe">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@email.com">
+      </div>
+
+      <div class="form-group">
+        <label>Street Address</label>
+        <input type="text" placeholder="123 Main Street">
+      </div>
+
+      <div class="consult-inquiry-row">
+        <div class="form-group">
+          <label>City</label>
+          <input type="text" placeholder="Lafayette">
+        </div>
+        <div class="form-group">
+          <label>Postal Code</label>
+          <input type="text" placeholder="70503">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Destination</label>
+        <select id="destinationSelect">
+          <option value="us-standard">United States — Standard (5–7 business days)</option>
+          <option value="us-express">United States — Express (2–3 business days)</option>
+          <option value="canada">Canada — International Standard</option>
+          <option value="europe">Europe — International Standard</option>
+          <option value="intl-other">Rest of World — International Standard</option>
+        </select>
+      </div>
+
+      <div class="shipping-callout" id="shippingCallout">
+        <strong>Domestic shipping.</strong> Ships from Lafayette, Louisiana. Tracking included.
+      </div>
+
+      <h2 class="checkout-h2" style="margin-top:36px;">Payment</h2>
+      <div class="form-group">
+        <label>Card Number</label>
+        <input type="text" placeholder="•••• •••• •••• ••••">
+      </div>
+      <div class="consult-inquiry-row">
+        <div class="form-group">
+          <label>Expiration</label>
+          <input type="text" placeholder="MM / YY">
+        </div>
+        <div class="form-group">
+          <label>Security Code</label>
+          <input type="text" placeholder="•••">
+        </div>
+      </div>
+
+      <button class="btn btn-primary" style="width:100%; margin-top:12px;">Place Order</button>
+      <p class="ec-fineprint" style="text-align:center; margin-top:14px;">A confirmation and receipt are emailed automatically once the order is placed.</p>
+    </div>
+
+    <!-- Right: order summary -->
+    <aside class="order-summary">
+      <h3>Order Summary</h3>
+      <div class="summary-line-items">
+        <div class="summary-item">
+          <span class="si-name">Josette: A Louisiana Tale <span class="si-qty">× 1</span></span>
+          <span class="si-price">$24.00</span>
+        </div>
+        <div class="summary-item">
+          <span class="si-name">Fleur-de-lis Brass Bookmark <span class="si-qty">× 2</span></span>
+          <span class="si-price">$24.00</span>
+        </div>
+        <div class="summary-item">
+          <span class="si-name">Creole Heritage Tote <span class="si-qty">× 1</span></span>
+          <span class="si-price">$28.00</span>
+        </div>
+      </div>
+
+      <div class="summary-totals">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotalVal">$76.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping <span class="ship-label" id="shipLabel">(US Standard)</span></span>
+          <span id="shippingVal">$6.95</span>
+        </div>
+        <div class="summary-row">
+          <span>Estimated Tax</span>
+          <span id="taxVal">$6.65</span>
+        </div>
+        <div class="summary-row summary-total">
+          <span>Total</span>
+          <span id="totalVal">$89.60</span>
+        </div>
+      </div>
+
+      <div class="shipping-rates-box">
+        <h4>Shipping Rates</h4>
+        <div class="rate-row"><span>US Standard</span><span>$6.95</span></div>
+        <div class="rate-row"><span>US Express</span><span>$14.95</span></div>
+        <div class="rate-row"><span>Canada</span><span>$19.95</span></div>
+        <div class="rate-row"><span>Europe</span><span>$28.95</span></div>
+        <div class="rate-row"><span>Rest of World</span><span>$34.95</span></div>
+        <p class="rates-fineprint">International orders may be subject to customs duties collected on delivery.</p>
+      </div>
+    </aside>
+
+  </div>
+</section>
+
+<div class="shop-cart-indicator">Cart <span class="cart-count">4</span></div>
+
+<div id="site-footer"></div>
+
+<script src="shared.js"></script>
+<script>
+  const RATES = {
+    'us-standard': { cost: 6.95, label: '(US Standard)', intl: false },
+    'us-express':  { cost: 14.95, label: '(US Express)', intl: false },
+    'canada':      { cost: 19.95, label: '(Canada)', intl: true },
+    'europe':      { cost: 28.95, label: '(Europe)', intl: true },
+    'intl-other':  { cost: 34.95, label: '(International)', intl: true }
+  };
+  const SUBTOTAL = 76.00;
+  const TAX_RATE = 0.0875;
+
+  const sel = document.getElementById('destinationSelect');
+  const shippingVal = document.getElementById('shippingVal');
+  const shipLabel = document.getElementById('shipLabel');
+  const taxVal = document.getElementById('taxVal');
+  const totalVal = document.getElementById('totalVal');
+  const callout = document.getElementById('shippingCallout');
+
+  function update() {
+    const r = RATES[sel.value];
+    const tax = r.intl ? 0 : SUBTOTAL * TAX_RATE;
+    shippingVal.textContent = '$' + r.cost.toFixed(2);
+    shipLabel.textContent = r.label;
+    taxVal.textContent = r.intl ? '—' : '$' + tax.toFixed(2);
+    totalVal.textContent = '$' + (SUBTOTAL + r.cost + tax).toFixed(2);
+    callout.innerHTML = r.intl
+      ? '<strong>International shipping.</strong> Ships from Lafayette, Louisiana. Delivery 10–21 business days. Customs duties may apply on arrival and are not included in this total.'
+      : '<strong>Domestic shipping.</strong> Ships from Lafayette, Louisiana. Tracking included.';
+    callout.className = 'shipping-callout' + (r.intl ? ' intl' : '');
+  }
+
+  sel.addEventListener('change', update);
+  update();
+</script>
+</body>
+</html>

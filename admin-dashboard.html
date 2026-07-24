@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Owner Dashboard (Concept) — Belle Heritage</title>
+<meta name="description" content="Concept mockup of the Belle Heritage owner dashboard: subscriber list, order automation, invoicing, and spreadsheet export.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="eyebrow">Internal — Concept Only</div>
+    <h1>Owner Dashboard</h1>
+    <p>What the back office would look like once the store is running on a commerce platform.</p>
+  </div>
+</section>
+
+<section class="admin-layout">
+
+  <div class="admin-banner">
+    <strong>This screen is illustrative.</strong> Nothing here sends, syncs, or saves. It shows what Elista would manage day-to-day — the actual functionality comes from the commerce platform and integrations listed in the accompanying spec.
+  </div>
+
+  <!-- Stat row -->
+  <div class="admin-stats">
+    <div class="admin-stat">
+      <span class="stat-label">Email Subscribers</span>
+      <span class="stat-value">1,248</span>
+      <span class="stat-delta">+36 this week</span>
+    </div>
+    <div class="admin-stat">
+      <span class="stat-label">Notification Opt-Ins</span>
+      <span class="stat-value">412</span>
+      <span class="stat-delta">+14 this week</span>
+    </div>
+    <div class="admin-stat">
+      <span class="stat-label">Orders This Month</span>
+      <span class="stat-value">63</span>
+      <span class="stat-delta">+9 vs. last month</span>
+    </div>
+    <div class="admin-stat">
+      <span class="stat-label">Invoices Auto-Sent</span>
+      <span class="stat-value">63</span>
+      <span class="stat-delta">100% of orders</span>
+    </div>
+  </div>
+
+  <div class="admin-grid">
+
+    <!-- Subscribers -->
+    <div class="admin-panel">
+      <div class="admin-panel-head">
+        <h3>Email List</h3>
+        <button class="admin-btn">Export to Spreadsheet</button>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Name</th><th>Email</th><th>Source</th><th>Joined</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>M. Broussard</td><td>m.brou•••@email.com</td><td>Boutique signup</td><td>May 21</td></tr>
+          <tr><td>T. Guidry</td><td>tguidry•••@email.com</td><td>Checkout</td><td>May 20</td></tr>
+          <tr><td>A. Landry</td><td>alandry•••@email.com</td><td>Event page</td><td>May 19</td></tr>
+          <tr><td>R. Thibodeaux</td><td>rthib•••@email.com</td><td>Boutique signup</td><td>May 18</td></tr>
+          <tr><td>C. Hebert</td><td>chebert•••@email.com</td><td>Book talk RSVP</td><td>May 17</td></tr>
+        </tbody>
+      </table>
+      <div class="admin-sync-note">
+        <span class="sync-dot"></span> Auto-syncs to Google Sheets after each new signup
+      </div>
+    </div>
+
+    <!-- Automations -->
+    <div class="admin-panel">
+      <div class="admin-panel-head">
+        <h3>Automations</h3>
+      </div>
+      <div class="automation-row">
+        <div class="auto-text">
+          <strong>Order confirmation email</strong>
+          <span>Sent immediately when payment clears</span>
+        </div>
+        <span class="toggle on"></span>
+      </div>
+      <div class="automation-row">
+        <div class="auto-text">
+          <strong>Thank-you email</strong>
+          <span>Sent 24 hours after order is confirmed</span>
+        </div>
+        <span class="toggle on"></span>
+      </div>
+      <div class="automation-row">
+        <div class="auto-text">
+          <strong>Invoice / receipt PDF</strong>
+          <span>Attached to confirmation automatically</span>
+        </div>
+        <span class="toggle on"></span>
+      </div>
+      <div class="automation-row">
+        <div class="auto-text">
+          <strong>Spreadsheet sync</strong>
+          <span>New subscribers and orders pushed to Sheets</span>
+        </div>
+        <span class="toggle on"></span>
+      </div>
+      <div class="automation-row">
+        <div class="auto-text">
+          <strong>Push notification on new drop</strong>
+          <span>Sent to opted-in browsers when a product goes live</span>
+        </div>
+        <span class="toggle"></span>
+      </div>
+      <div class="automation-row">
+        <div class="auto-text">
+          <strong>Abandoned cart reminder</strong>
+          <span>Sent 12 hours after cart is left</span>
+        </div>
+        <span class="toggle"></span>
+      </div>
+    </div>
+
+    <!-- Orders -->
+    <div class="admin-panel admin-panel-wide">
+      <div class="admin-panel-head">
+        <h3>Recent Orders</h3>
+        <button class="admin-btn">Export to Spreadsheet</button>
+      </div>
+      <table class="admin-table">
+        <thead>
+          <tr><th>Order</th><th>Customer</th><th>Items</th><th>Destination</th><th>Shipping</th><th>Total</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>#1084</td><td>M. Broussard</td><td>3</td><td>Lafayette, LA</td><td>$6.95</td><td>$89.60</td><td><span class="status paid">Invoice sent</span></td></tr>
+          <tr><td>#1083</td><td>J. Comeaux</td><td>1</td><td>Austin, TX</td><td>$6.95</td><td>$44.05</td><td><span class="status paid">Invoice sent</span></td></tr>
+          <tr><td>#1082</td><td>L. Fontenot</td><td>2</td><td>Toronto, CA</td><td>$19.95</td><td>$81.95</td><td><span class="status intl">International</span></td></tr>
+          <tr><td>#1081</td><td>S. Melancon</td><td>4</td><td>Baton Rouge, LA</td><td>$6.95</td><td>$118.20</td><td><span class="status thanks">Thank-you sent</span></td></tr>
+          <tr><td>#1080</td><td>D. Arceneaux</td><td>1</td><td>Paris, FR</td><td>$28.95</td><td>$66.95</td><td><span class="status intl">International</span></td></tr>
+        </tbody>
+      </table>
+      <div class="admin-sync-note">
+        <span class="sync-dot"></span> Order data mirrors to the master spreadsheet nightly
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="shared.js"></script>
+</body>
+</html>

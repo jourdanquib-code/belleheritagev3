@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Josette Collection — Belle Heritage Boutique</title>
+<meta name="description" content="Shop the full Belle Heritage Boutique collection — Josette books, Creole heritage gifts, and handcrafted Louisiana bookmarks. Filter by collection and price.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="eyebrow">Book Nook & Gifts</div>
+    <h1>The Josette Collection</h1>
+    <p>The beloved Josette story and her keepsakes — books, plush, and more for young readers.</p>
+  </div>
+</section>
+
+<section class="shop-layout">
+  <div class="shop-container">
+
+    <!-- Filters -->
+    <aside class="shop-filters">
+      <h3>Filters</h3>
+      <span class="filters-sub">Refine your browse</span>
+
+      <div class="filter-group">
+        <h4>Collection</h4>
+        <label class="filter-option"><input type="checkbox" class="collection-filter" value="Josette"> Josette <span class="count">4</span></label>
+        <label class="filter-option"><input type="checkbox" class="collection-filter" value="Creole"> Creole <span class="count">4</span></label>
+        <label class="filter-option"><input type="checkbox" class="collection-filter" value="Bookmarks"> Bookmarks <span class="count">4</span></label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Price</h4>
+        <div class="price-range-display" id="priceDisplay">Up to $50</div>
+        <input type="range" class="price-slider" id="priceSlider" min="5" max="50" value="50" step="1">
+      </div>
+
+      <button class="clear-filters" id="clearFilters">Clear All Filters</button>
+    </aside>
+
+    <!-- Products -->
+    <div class="shop-main">
+      <div class="shop-main-header">
+        <span class="shop-result-count" id="resultCount">12 items</span>
+        <select class="shop-sort">
+          <option>Sort: Featured</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+          <option>Newest</option>
+        </select>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+    </div>
+
+  </div>
+</section>
+
+<a href="checkout.html" class="shop-cart-indicator">Cart <span class="cart-count">0</span></a>
+
+<div id="site-footer"></div>
+
+<script src="shared.js"></script>
+<script src="shop.js"></script>
+<script>initShop("Josette");</script>
+</body>
+</html>

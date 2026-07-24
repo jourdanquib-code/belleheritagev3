@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programs — Belle Heritage | Living History, Culture for Kids & Scholarly Presentations</title>
+<meta name="description" content="Belle Heritage's living history programs, culture for kids workshops, scholarly presentations, and book talks bring Louisiana heritage to life for schools, libraries, museums, and festivals.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="site-nav"></div>
+
+<section class="page-header">
+  <div class="page-header-content">
+    <div class="eyebrow">Living Heritage in Action</div>
+    <h1>Programs</h1>
+    <p>Engaging, curriculum-aligned experiences that turn history into something audiences can see, touch, and feel.</p>
+  </div>
+</section>
+
+<section class="two-col-intro">
+  <div class="full-width-intro">
+    <span class="section-eyebrow">A Word From Belle Heritage</span>
+    <h2 class="section-title" style="font-size:2.6rem;">History, Made Memorable</h2>
+    <p>Every program is tailored to your audience's age, interests, and learning goals — curriculum-aligned for schools, crowd-ready for festivals, and built to make history stick.</p>
+  </div>
+</section>
+
+<section class="program-list">
+  <div class="section-container" style="text-align:center; margin-bottom: 56px;">
+    <span class="section-eyebrow">Choose Your Experience</span>
+    <h2 class="section-title">Our Program Offerings</h2>
+    <div class="section-divider"><span>✦</span></div>
+  </div>
+
+  <div class="program-list-grid">
+
+    <div class="program-card kids-card clickable-card" id="culture-for-kids" data-href="culture-for-kids.html">
+      <div class="program-card-image">
+        <img src="images/Programs-CultureForKids.webp" alt="Culture for Kids">
+        <span class="kids-badge">For Young Explorers!</span>
+      </div>
+      <div class="program-card-body">
+        <h3>Culture for Kids <span class="kids-emoji">✨</span></h3>
+        <p>History through play, music, and make-believe. Built for pre-K through middle school.</p>
+        <div class="audience-buttons">
+          <a href="culture-for-kids.html#ages-4-6" class="aud-btn">Ages 4–6</a>
+          <a href="culture-for-kids.html#ages-7-9" class="aud-btn">Ages 7–9</a>
+          <a href="culture-for-kids.html#ages-10-13" class="aud-btn">Ages 10–13</a>
+          <a href="shop-josette.html" class="aud-btn aud-btn-alt">Children's Books</a>
+        </div>
+        <div class="card-cta">
+          <a href="culture-for-kids.html" class="aud-btn aud-btn-info">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-card clickable-card" id="living-history" data-href="living-history.html">
+      <div class="program-card-image">
+        <img src="images/Programs-LivingHistory_Louisiana_Acadians_.webp" alt="Living History">
+      </div>
+      <div class="program-card-body">
+        <h3>Living History</h3>
+        <p>Costumed reenactments and hands-on demonstrations that put audiences inside Louisiana's defining eras.</p>
+        <div class="audience-buttons">
+          <a href="living-history.html#students" class="aud-btn">Students</a>
+          <a href="living-history.html#general-public" class="aud-btn">General Public</a>
+        </div>
+        <div class="card-cta">
+          <a href="living-history.html" class="aud-btn aud-btn-info">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-card clickable-card" id="scholarly" data-href="scholarly.html">
+      <div class="program-card-image">
+        <img src="images/Programs-ScholarlyPresentations.webp" alt="Scholarly Presentations">
+      </div>
+      <div class="program-card-body">
+        <h3>Scholarly Presentations</h3>
+        <p>Research-grounded lectures for universities, conferences, and adult education audiences.</p>
+        <div class="audience-buttons">
+          <a href="scholarly.html#all-ages" class="aud-btn">All Ages</a>
+        </div>
+        <div class="card-cta">
+          <a href="scholarly.html" class="aud-btn aud-btn-info">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="program-card clickable-card" id="book-talks" data-href="book-talks.html">
+      <div class="program-card-image">
+        <img src="images/Programs-BookTalk.webp" alt="Book Talks">
+      </div>
+      <div class="program-card-body">
+        <h3>Book Talks</h3>
+        <p>Author conversations and signings featuring Dr. Istre's published work on Louisiana culture.</p>
+        <div class="audience-buttons">
+          <a href="book-talks.html#adults" class="aud-btn">Adults / General Public</a>
+          <a href="book-talks.html#kids" class="aud-btn kids-menu-item">Kids ✨</a>
+        </div>
+        <div class="card-cta">
+          <a href="book-talks.html" class="aud-btn aud-btn-info">Learn More →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="feature-strip">
+  <h2>Designed for Every Audience</h2>
+  <p>Curriculum-aligned. Accessibility-minded. Available in-person across Louisiana and virtually anywhere in the world.</p>
+  <a href="book-now.html" class="btn btn-outline">Plan Your Program</a>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="shared.js"></script>
+<script src="confetti.js"></script>
+<script>
+  // Whole card is clickable, but inner buttons/links take priority
+  document.querySelectorAll('.clickable-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      window.location = card.dataset.href;
+    });
+  });
+</script>
+</body>
+</html>
